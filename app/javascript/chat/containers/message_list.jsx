@@ -7,7 +7,7 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.fetchMessages();
   }
 
@@ -40,7 +40,7 @@ class MessageList extends Component {
             })
           }
         </div>
-        <MessageForm />
+        <MessageForm selectedChannel={this.props.selectedChannel}/>
       </div>
     );
   }
@@ -48,8 +48,7 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
-    selectedChannel: state.selectedChannel
+    messages: state.messages
   };
 }
 

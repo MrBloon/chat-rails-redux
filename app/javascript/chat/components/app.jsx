@@ -2,14 +2,16 @@ import React from 'react';
 import ChannelList from '../containers/channel_list';
 import MessageList from '../containers/message_list';
 
-const App = () => {
+import source from "../../../assets/images/logo.png";
+
+const App = (props) => {
   return (
     <div className="messaging-wrapper">
       <div className="logo-container">
-        <img className="messaging-logo" src="assets/images/logo.png" alt="logo" />
+        <img className="messaging-logo" src={source} alt="logo" />
       </div>
-      <ChannelList />
-      <MessageList />
+      <ChannelList selectedChannel={props.match.params.channel} />
+      <MessageList selectedChannel={props.match.params.channel} />
     </div>
   );
 };

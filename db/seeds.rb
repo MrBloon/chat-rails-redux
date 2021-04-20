@@ -16,7 +16,7 @@ channels = names.map do |name|
 end
 
 users = nicknames.map do |nickname|
-  User.create(email: "#{nickname.downcase}@lewagon.com", password: "testtest")
+  User.create(email: "#{nickname.downcase}@lewagon.com", password: "testtest", nickname: nickname)
 end
 
 20.times do

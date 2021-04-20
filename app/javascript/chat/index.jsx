@@ -21,7 +21,7 @@ const reducers = combineReducers({
   channels: (state = null, action) => state
 });
 
-const middlewares = applyMiddleware(logger, ReduxPromise);
+const middlewares = applyMiddleware(ReduxPromise, logger);
 const store = createStore(reducers, initialState, middlewares);
 
 ReactDOM.render(
